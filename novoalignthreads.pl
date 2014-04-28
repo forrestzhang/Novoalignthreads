@@ -8,14 +8,12 @@ use Pod::Usage;
 #===============================================
 #   File: thread_runnovoalign.pl
 #   USAGE Example: perl thread_runnovoalign.pl -dbname ~/rice/tigr7/genome/tigr7cm.ndx -novopath ~/ChIPSoftware/novocraft/novoalign -mergepath ~/ChIPSoftware/picard-tools/picard-tools-1.81/MergeSamFiles.jar -reads1 JJ_OS_0_5U_CenH3_R1.fq -reads2 JJ_OS_0_5U_CenH3_R2.fq -parameters '-r Random' -threads 12 -samplename CenH3_05u
-#   AUTHOR: Tao Zhang, tzhang54@wisc.edu
+#   AUTHOR: Tao Zhang, tzhang54 (AT) wisc . edu
 #   CREATED: 04/21/2013
-#   REVISION: 05/01/2013
+#   REVISION: 04/20/2014
 #   DEPENDENT: novoalign (http://www.novocraft.com), picards (http://picard.sourceforge.net)
 #===============================================
 
-
-#time perl thread_runnovoalign.pl -dbname ~/rice/tigr7/genome/tigr7cm.ndx -novopath ~/ChIPSoftware/novocraft/novoalign -mergepath ~/ChIPSoftware/picard-tools/picard-tools-1.81/MergeSamFiles.jar -reads1 JJ_OS_0_5U_CenH3_R1.fq -reads2 JJ_OS_0_5U_CenH3_R2.fq -parameters '-r Random' -threads 12 -samplename CenH3_05u
 
 my $dbname;
 my $reads1;
