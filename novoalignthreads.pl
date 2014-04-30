@@ -44,10 +44,16 @@ pod2usage(1) if $help;
 pod2usage(-verbose => 2) if $man;
 #pod2usage("$0: No files given.")  if ((@ARGV == 0) && (-t STDIN));
 #pod2usage(1)  if (@ARGV == 0);
-pod2usage("please input novoalign's dbname") unless $dbname;
+unless ($dbname){
+    
+    print "please input novoalign's dbname\n";
+    pod2usage(1);
+    exit;
+}
 
 unless ($dbname=~/ndx/){
     print "$dbname is not a novo index file (\.ndx)\n";
+    pod2usage(1);
     exit;
 }
 
@@ -307,3 +313,6 @@ Parameters of novoalign
 
 =item B<-samplename>
 Sample's name, example: -samplename 'CenH3_05u'
+
+=item B<-gziped>
+raw data whether compressed by gzip, example: -gziped yes 
