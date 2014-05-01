@@ -6,11 +6,11 @@ use Getopt::Long;
 use Pod::Usage;
 
 #===============================================
-#   File: thread_runnovoalign.pl
+#   File: novoalignthreads.pl
 #   USAGE Example: perl novoalignthreads.pl -dbname ~/genome/tigr7cm.ndx -novopath ~/novocraft/novoalign -mergepath ~/picard-tools/picard-tools-1.81/MergeSamFiles.jar -reads1 Reads_R1.fq -reads2 Reads_R2.fq -parameters '-r Random' -threads 12 -samplename novoalign
 #   AUTHOR: Tao Zhang, tzhang54 (AT) wisc . edu
 #   CREATED: 04/21/2013
-#   REVISION: 04/20/2014
+#   REVISION: 05/01/2014
 #   DEPENDENT: novoalign (http://www.novocraft.com), picards (http://picard.sourceforge.net)
 #===============================================
 
