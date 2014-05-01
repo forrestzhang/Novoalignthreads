@@ -5,7 +5,8 @@ novoalign mutil-threads
 A perl scrtipe convert single thread novoalign to mutil-threads version, and add gzip support.
 
 DEPENDENT: novoalign (http://www.novocraft.com), picards (http://picard.sourceforge.net)
-================
+
+
 Options:
 
     -help print a brief help
