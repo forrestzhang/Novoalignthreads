@@ -28,3 +28,7 @@ Options:
     -samplename Sample's name, example: -samplename 'CenH3_05u'
     
     -gziped raw data whether compressed by gzip, example: -gziped yes
+
+
+Example:
+    perl novoalignthreads.pl -dbname ~/genome/tigr7cm.ndx -novopath ~/novocraft/novoalign -mergepath ~/picard-tools/picard-tools-1.81/MergeSamFiles.jar -reads1 Reads_R1.fq -reads2 Reads_R2.fq -parameters '-r Random' -threads 12 -samplename novoalign
