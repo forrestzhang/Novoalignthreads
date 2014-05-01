@@ -99,6 +99,16 @@ if ($gziped eq 'yes'){
 }
     
 
+open CH,$file1;
+
+my $linnumber = 0;
+while (<CH>) {
+
+    $linnumber++;
+
+}
+
+my $mark = int($linnumber/4/($threads-1));
 
 open F1,$file1;
 
@@ -121,7 +131,7 @@ while (<F1>){
     
     $somthing = $_;
     
-    if ($read1 % 1000000 == 0){
+    if ($read1 % $mark == 0){
         
         $nowoutname1 = "$reads1\_$sc1";
         $filehandle{$nowoutname1} = FileHandle-> new(">$nowoutname1");
@@ -157,7 +167,7 @@ if ($reads2){
         
         $somthing = $_;
         
-        if ($read2 % 1000000 == 0){
+        if ($read2 % $mark == 0){
             
             $nowoutname2 = "$reads2\_$sc2";
             $filehandle{$nowoutname2} = FileHandle-> new(">$nowoutname2");
