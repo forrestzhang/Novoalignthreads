@@ -7,7 +7,7 @@ use Pod::Usage;
 
 #===============================================
 #   File: thread_runnovoalign.pl
-#   USAGE Example: perl thread_runnovoalign.pl -dbname ~/rice/tigr7/genome/tigr7cm.ndx -novopath ~/ChIPSoftware/novocraft/novoalign -mergepath ~/ChIPSoftware/picard-tools/picard-tools-1.81/MergeSamFiles.jar -reads1 JJ_OS_0_5U_CenH3_R1.fq -reads2 JJ_OS_0_5U_CenH3_R2.fq -parameters '-r Random' -threads 12 -samplename CenH3_05u
+#   USAGE Example: perl novoalignthreads.pl -dbname ~/genome/tigr7cm.ndx -novopath ~/novocraft/novoalign -mergepath ~/picard-tools/picard-tools-1.81/MergeSamFiles.jar -reads1 Reads_R1.fq -reads2 Reads_R2.fq -parameters '-r Random' -threads 12 -samplename novoalign
 #   AUTHOR: Tao Zhang, tzhang54 (AT) wisc . edu
 #   CREATED: 04/21/2013
 #   REVISION: 04/20/2014
