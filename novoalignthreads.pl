@@ -10,7 +10,7 @@ use Pod::Usage;
 #   USAGE Example: perl novoalignthreads.pl -dbname ~/genome/tigr7cm.ndx -novopath ~/novocraft/novoalign -mergepath ~/picard-tools/picard-tools-1.81/MergeSamFiles.jar -reads1 Reads_R1.fq -reads2 Reads_R2.fq -parameters '-r Random' -threads 12 -samplename novoalign
 #   AUTHOR: Tao Zhang, tzhang54 (AT) wisc . edu
 #   CREATED: 04/21/2013
-#   REVISION: 05/01/2014
+#   REVISION: 10/19/2015
 #   DEPENDENT: novoalign (http://www.novocraft.com), picards (http://picard.sourceforge.net)
 #===============================================
 
@@ -72,12 +72,12 @@ unless (-e $novopath){
 }
 
 unless (-e $mergepath){
-    print "can't find MergeSamFiles.jar\n";
+    print "can't find picard.jar\n";
     pod2usage(1);
     exit;
 }else{
     print "$mergepath ";
-    my $mergetjartest = `java -jar $mergepath --version`;
+    my $mergetjartest = `java -jar $mergepath MergeSamFiles --version`;
     
     #if ($mergetjartest){
     #    #my $mergeversion =  `java -jar $mergepath --version`;
@@ -244,7 +244,7 @@ for (my $i=0;$i<$sc1;$i++){
     
 }
 
-my $mergecommand = 'java -jar  '. $mergepath .' ' .$input.' OUTPUT='.$type.'_nova.bam SORT_ORDER=coordinate   VALIDATION_STRINGENCY=LENIENT';
+my $mergecommand = 'java -jar  '. $mergepath .' MergeSamFiles ' .' ' .$input.' OUTPUT='.$type.'_nova.bam SORT_ORDER=coordinate   VALIDATION_STRINGENCY=LENIENT';
 print "$mergecommand\n";
 `$mergecommand`;
 
@@ -304,7 +304,7 @@ print a brief help
 Full pathname of novoalign
 
 =item B<-mergepath>
-Full pathname of MergeSamFiles.jar 
+Full pathname of picard.jar 
 
 =item B<-dbname>
 Full pathname of indexed reference sequence from novoindex
